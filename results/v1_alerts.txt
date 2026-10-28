@@ -1,0 +1,4 @@
+Total alerts: 2
+
+{'rule': 'v1', 'ip': '203.0.113.45', 'fail_window_start': datetime.datetime(2025, 3, 15, 2, 0), 'fail_window_end': datetime.datetime(2025, 3, 15, 2, 5), 'num_failures': 6, 'last_failure': datetime.datetime(2025, 3, 15, 2, 2, 30), 'success': datetime.datetime(2025, 3, 15, 2, 5)}
+{'rule': 'v1', 'ip': '192.168.1.100', 'fail_window_start': datetime.datetime(2025, 3, 15, 11, 0), 'fail_window_end': datetime.datetime(2025, 3, 15, 11, 5), 'num_failures': 6, 'last_failure': datetime.datetime(2025, 3, 15, 11, 2, 30), 'success': datetime.datetime(2025, 3, 15, 11, 5)}
