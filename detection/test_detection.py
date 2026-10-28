@@ -19,6 +19,15 @@ def write_alerts(alerts, path):
             f.write(str(a) + "\n")
 
 
+def has_alert(alerts, ip, user=None):
+    for a in alerts:
+        if a["ip"] != ip:
+            continue
+        if user is None or a.get("user") in (None, user):
+            return True
+    return False
+
+
 def main():
     os.makedirs(RESULTS_DIR, exist_ok=True)
     entries = parse_log(LOG_PATH)
@@ -40,12 +49,6 @@ def main():
 
     write_alerts(v1_alerts, os.path.join(RESULTS_DIR, "v1_alerts.txt"))
     write_alerts(v2_alerts, os.path.join(RESULTS_DIR, "v2_alerts.txt"))
-
-    def has_alert(alerts, ip, user=None):
-        for a in alerts:
-            if a["ip"] == ip and (user is None or a.get("user") == user):
-                return True
-        return False
 
     print("\n" + "=" * 60)
     print("Test-case summary")
